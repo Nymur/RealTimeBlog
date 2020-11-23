@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Reply extends Model
 {
     use HasFactory;
+
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
+
+    public function question(){
+        return $this->belongsTo('App\Modells\Question');
+    }
+
+    public function like(){
+        return $this->hasMany('App\Models\Like');
+    }
 }
