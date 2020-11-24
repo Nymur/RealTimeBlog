@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 use App\Models\User;
 use App\Models\Reply;
 use App\Models\Category;
 
-class Question extends Model
+class Question extends Eloquent
 {
     use HasFactory;
 
