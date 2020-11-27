@@ -9,4 +9,10 @@ use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 class Category extends Eloquent
 {
     use HasFactory;
+
+    protected $guarded = [];
+
+    public function getRouteKeyName(){
+        return 'slug';
+    }
 }

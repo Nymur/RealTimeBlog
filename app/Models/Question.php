@@ -12,6 +12,17 @@ use App\Models\Category;
 class Question extends Eloquent
 {
     use HasFactory;
+    // protected $fillable = []; //this is good way
+    protected $guarded = [];
+
+
+    public function getRouteKeyName(){
+        return 'slug';
+    }
+
+    public function getPathAttribute(){
+        return asset("api/question/$this->slug");
+    }
 
     public function user(){
         return $this->belongsTo(User::class);
